@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0"
+         metadata-complete="true">
+
+    <display-name>Student Record Management System (SRMS)</display-name>
+
+    <!-- Authentication & Security Filter -->
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.srms.filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Auth & Sign Up Servlets -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.srms.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.srms.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.srms.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- Admin Servlets -->
+    <servlet>
+        <servlet-name>AdminDashboardServlet</servlet-name>
+        <servlet-class>com.srms.controller.AdminDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminDashboardServlet</servlet-name>
+        <url-pattern>/admin/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManageStudentsServlet</servlet-name>
+        <servlet-class>com.srms.controller.ManageStudentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManageStudentsServlet</servlet-name>
+        <url-pattern>/admin/students</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManageFacultyServlet</servlet-name>
+        <servlet-class>com.srms.controller.ManageFacultyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManageFacultyServlet</servlet-name>
+        <url-pattern>/admin/faculty</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManageCoursesServlet</servlet-name>
+        <servlet-class>com.srms.controller.ManageCoursesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManageCoursesServlet</servlet-name>
+        <url-pattern>/admin/courses</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManageFeesServlet</servlet-name>
+        <servlet-class>com.srms.controller.ManageFeesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManageFeesServlet</servlet-name>
+        <url-pattern>/admin/fees</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManageAnnouncementsServlet</servlet-name>
+        <servlet-class>com.srms.controller.ManageAnnouncementsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManageAnnouncementsServlet</servlet-name>
+        <url-pattern>/admin/announcements</url-pattern>
+    </servlet-mapping>
+
+    <!-- Faculty Servlets -->
+    <servlet>
+        <servlet-name>FacultyDashboardServlet</servlet-name>
+        <servlet-class>com.srms.controller.FacultyDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FacultyDashboardServlet</servlet-name>
+        <url-pattern>/faculty/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MarkAttendanceServlet</servlet-name>
+        <servlet-class>com.srms.controller.MarkAttendanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MarkAttendanceServlet</servlet-name>
+        <url-pattern>/faculty/attendance</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EnterMarksServlet</servlet-name>
+        <servlet-class>com.srms.controller.EnterMarksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnterMarksServlet</servlet-name>
+        <url-pattern>/faculty/marks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FacultyTimetableServlet</servlet-name>
+        <servlet-class>com.srms.controller.FacultyTimetableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FacultyTimetableServlet</servlet-name>
+        <url-pattern>/faculty/timetable</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FacultyAnnouncementsServlet</servlet-name>
+        <servlet-class>com.srms.controller.FacultyAnnouncementsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FacultyAnnouncementsServlet</servlet-name>
+        <url-pattern>/faculty/announcements</url-pattern>
+    </servlet-mapping>
+
+    <!-- Student Servlets -->
+    <servlet>
+        <servlet-name>StudentDashboardServlet</servlet-name>
+        <servlet-class>com.srms.controller.StudentDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentDashboardServlet</servlet-name>
+        <url-pattern>/student/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentAttendanceServlet</servlet-name>
+        <servlet-class>com.srms.controller.StudentAttendanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentAttendanceServlet</servlet-name>
+        <url-pattern>/student/attendance</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentMarksServlet</servlet-name>
+        <servlet-class>com.srms.controller.StudentMarksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentMarksServlet</servlet-name>
+        <url-pattern>/student/marks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentFeeServlet</servlet-name>
+        <servlet-class>com.srms.controller.StudentFeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentFeeServlet</servlet-name>
+        <url-pattern>/student/fees</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentTimetableServlet</servlet-name>
+        <servlet-class>com.srms.controller.StudentTimetableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentTimetableServlet</servlet-name>
+        <url-pattern>/student/timetable</url-pattern>
+    </servlet-mapping>
+
+    <!-- Parent Servlets -->
+    <servlet>
+        <servlet-name>ParentDashboardServlet</servlet-name>
+        <servlet-class>com.srms.controller.ParentDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParentDashboardServlet</servlet-name>
+        <url-pattern>/parent/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <!-- PDF Export Servlet -->
+    <servlet>
+        <servlet-name>PdfExportServlet</servlet-name>
+        <servlet-class>com.srms.controller.PdfExportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PdfExportServlet</servlet-name>
+        <url-pattern>/export/pdf</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>login</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>

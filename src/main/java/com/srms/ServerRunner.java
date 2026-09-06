@@ -12,8 +12,10 @@ import java.io.File;
 public class ServerRunner {
 
     public static void main(String[] args) throws Exception {
-        int port = 8080;
-        String portProp = System.getProperty("port");
+        int port = Integer . parseInt(
+        System.getenv().getOrDefault("PORT",
+        "8080")
+        );                              
         if (portProp != null && !portProp.isEmpty()) {
             try {
                 port = Integer.parseInt(portProp);
